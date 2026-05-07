@@ -6,4 +6,3 @@ export default defineConfig({
   plugins: [vue()],
   base: '/Klika-ka/'
 })
-
