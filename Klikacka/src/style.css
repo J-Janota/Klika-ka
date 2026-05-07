@@ -1,164 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #app { height: 100%; }
 
-:root {
-  /* warm (default) */
-  --page-bg-1: #1e1208;
-  --page-bg-2: #2c1a0e;
-  --page-bg-3: #180e06;
-
-  --panel:        rgba(44, 26, 14, 0.92);
-  --panel-alt:    rgba(30, 18, 8, 0.95);
-  --panel-border: rgba(232, 144, 42, 0.30);
-  --panel-shadow: rgba(0, 0, 0, 0.5);
-
-  --accent:      #e8902a;
-  --accent-soft: rgba(232, 144, 42, 0.15);
-  --accent-glow: rgba(232, 144, 42, 0.35);
-
-  --text-1: #f5e6c8;
-  --text-2: #c4a47a;
-  --text-3: #8a6a44;
-
-  --btn-bg:     linear-gradient(135deg, #e8902a, #c06a10);
-  --btn-text:   #fff8ee;
-  --btn-shadow: rgba(232, 144, 42, 0.4);
-
-  --header-bg:     rgba(18, 10, 4, 0.9);
-  --header-border: rgba(232, 144, 42, 0.2);
-  --tab-active-border: var(--accent);
-  --tab-active-bg:     rgba(232, 144, 42, 0.12);
-
-  /* Rarity colours (consistent across themes) */
-  --r-common:    #9aa0a6;
-  --r-uncommon:  #4caf74;
-  --r-rare:      #4da6ff;
-  --r-epic:      #b06aff;
-  --r-legendary: #ffcc00;
-
-  --r-common-glow:    rgba(154, 160, 166, 0.25);
-  --r-uncommon-glow:  rgba(76, 175, 116, 0.35);
-  --r-rare-glow:      rgba(77, 166, 255, 0.40);
-  --r-epic-glow:      rgba(176, 106, 255, 0.45);
-  --r-legendary-glow: rgba(255, 204, 0,   0.55);
-}
-
-[data-theme="night"] {
-  --page-bg-1: #0a0818;
-  --page-bg-2: #160e2e;
-  --page-bg-3: #0d1525;
-
-  --panel:        rgba(22, 18, 40, 0.55);
-  --panel-alt:    rgba(12, 10, 26, 0.75);
-  --panel-border: rgba(245, 166, 35, 0.20);
-  --panel-shadow: rgba(0, 0, 0, 0.6);
-
-  --accent:      #f5a623;
-  --accent-soft: rgba(245, 166, 35, 0.12);
-  --accent-glow: rgba(245, 166, 35, 0.40);
-
-  --text-1: #f0e6d3;
-  --text-2: #b8a07a;
-  --text-3: #6e5a3a;
-
-  --btn-bg:     linear-gradient(135deg, #f5a623, #c07a10);
-  --btn-text:   #0a0818;
-  --btn-shadow: rgba(245, 166, 35, 0.45);
-
-  --header-bg:     rgba(6, 4, 16, 0.85);
-  --header-border: rgba(245, 166, 35, 0.15);
-  --tab-active-border: var(--accent);
-  --tab-active-bg:     rgba(245, 166, 35, 0.10);
-}
-
-[data-theme="premium"] {
-  --page-bg-1: #0c0e18;
-  --page-bg-2: #14182a;
-  --page-bg-3: #0a0c16;
-
-  --panel:        rgba(22, 26, 48, 0.90);
-  --panel-alt:    rgba(14, 16, 34, 0.95);
-  --panel-border: rgba(201, 168, 76, 0.22);
-  --panel-shadow: rgba(0, 0, 0, 0.55);
-
-  --accent:      #c9a84c;
-  --accent-soft: rgba(201, 168, 76, 0.10);
-  --accent-glow: rgba(201, 168, 76, 0.30);
-
-  --text-1: #e8e8e8;
-  --text-2: #9a8f70;
-  --text-3: #5a5040;
-
-  --btn-bg:     linear-gradient(135deg, #c9a84c, #8a6820);
-  --btn-text:   #0c0e18;
-  --btn-shadow: rgba(201, 168, 76, 0.35);
-
-  --header-bg:     rgba(6, 8, 16, 0.92);
-  --header-border: rgba(201, 168, 76, 0.15);
-  --tab-active-border: var(--accent);
-  --tab-active-bg:     rgba(201, 168, 76, 0.08);
-}
-
-[data-theme="vibrant"] {
-  --page-bg-1: #1a0533;
-  --page-bg-2: #2d0a6e;
-  --page-bg-3: #0a2040;
-
-  --panel:        rgba(35, 12, 75, 0.85);
-  --panel-alt:    rgba(20, 6, 46, 0.90);
-  --panel-border: rgba(255, 110, 180, 0.28);
-  --panel-shadow: rgba(0, 0, 0, 0.6);
-
-  --accent:      #ff6eb4;
-  --accent-soft: rgba(255, 110, 180, 0.12);
-  --accent-glow: rgba(255, 110, 180, 0.45);
-
-  --text-1: #ffffff;
-  --text-2: #c49ad4;
-  --text-3: #7a5a90;
-
-  --btn-bg:     linear-gradient(135deg, #ff6eb4, #c020a0);
-  --btn-text:   #ffffff;
-  --btn-shadow: rgba(255, 110, 180, 0.50);
-
-  --header-bg:     rgba(10, 2, 24, 0.90);
-  --header-border: rgba(255, 110, 180, 0.20);
-  --tab-active-border: var(--accent);
-  --tab-active-bg:     rgba(255, 110, 180, 0.10);
-}
-
-body {
+html, body {
   font-family: 'Fredoka', system-ui, sans-serif;
-  color: var(--text-1);
-  background: var(--page-bg-1);
+  -webkit-font-smoothing: antialiased;
+  color: var(--ink);
+  background: var(--bg-1);
+
+  /* This is a clicker — nothing here is meant to be highlighted/copied. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.game-layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(135deg, var(--page-bg-1), var(--page-bg-2), var(--page-bg-3));
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.gameBody {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
+button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-main {
-  padding: 1rem;
-  flex: 1;
-  display: flex;
-  gap: 1rem;
+/* Opt-in for any element that genuinely needs selection later. */
+.selectable {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
-@media (max-width: 1440px) {
-  main { flex-direction: column; overflow-y: auto; }
+.serif { font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.005em; }
+.mono  { font-family: 'Fredoka', system-ui, sans-serif; font-weight: 500; }
+
+/* Time-of-day palettes — applied to <html data-tod="..."> */
+[data-tod="dawn"] {
+  --bg-1: oklch(0.94 0.04 60);
+  --bg-2: oklch(0.88 0.06 30);
+  --paper: oklch(0.96 0.025 70);
+  --ink: oklch(0.30 0.04 30);
+  --ink-soft: oklch(0.50 0.04 30);
+  --ink-faint: oklch(0.68 0.04 30);
+  --rule: oklch(0.85 0.04 30);
+  --accent: oklch(0.62 0.13 35);
+  --warm: oklch(0.88 0.10 50);
+  --gold: oklch(0.65 0.14 70);
+  --felt: oklch(0.40 0.08 25);
+  --felt-lo: oklch(0.28 0.06 25);
+  --paper-card: oklch(0.96 0.03 80);
+  --scene-grad-from: oklch(0.92 0.06 30);
+  --scene-grad-to: oklch(0.95 0.05 60);
+}
+[data-tod="day"] {
+  --bg-1: oklch(0.95 0.025 75);
+  --bg-2: oklch(0.92 0.04 90);
+  --paper: oklch(0.985 0.012 80);
+  --ink: oklch(0.26 0.035 60);
+  --ink-soft: oklch(0.45 0.04 60);
+  --ink-faint: oklch(0.65 0.03 60);
+  --rule: oklch(0.85 0.025 70);
+  --accent: oklch(0.58 0.13 50);
+  --warm: oklch(0.90 0.08 75);
+  --gold: oklch(0.65 0.14 70);
+  --felt: oklch(0.30 0.08 150);
+  --felt-lo: oklch(0.22 0.06 150);
+  --paper-card: oklch(0.96 0.03 80);
+  --scene-grad-from: oklch(0.95 0.04 95);
+  --scene-grad-to: oklch(0.93 0.04 80);
+}
+[data-tod="dusk"] {
+  --bg-1: oklch(0.78 0.10 30);
+  --bg-2: oklch(0.55 0.13 350);
+  --paper: oklch(0.88 0.05 50);
+  --ink: oklch(0.22 0.04 30);
+  --ink-soft: oklch(0.42 0.05 30);
+  --ink-faint: oklch(0.58 0.05 30);
+  --rule: oklch(0.72 0.06 40);
+  --accent: oklch(0.50 0.15 25);
+  --warm: oklch(0.80 0.13 40);
+  --gold: oklch(0.65 0.14 70);
+  --felt: oklch(0.32 0.10 25);
+  --felt-lo: oklch(0.20 0.08 25);
+  --paper-card: oklch(0.96 0.03 80);
+  --scene-grad-from: oklch(0.55 0.13 350);
+  --scene-grad-to: oklch(0.78 0.10 30);
+}
+[data-tod="night"] {
+  --bg-1: oklch(0.18 0.04 270);
+  --bg-2: oklch(0.12 0.04 280);
+  --paper: oklch(0.22 0.04 270);
+  --ink: oklch(0.94 0.02 80);
+  --ink-soft: oklch(0.78 0.03 80);
+  --ink-faint: oklch(0.55 0.04 80);
+  --rule: oklch(0.32 0.04 270);
+  --accent: oklch(0.82 0.14 75);
+  --warm: oklch(0.55 0.10 60);
+  --gold: oklch(0.85 0.16 80);
+  --felt: oklch(0.20 0.06 270);
+  --felt-lo: oklch(0.12 0.05 270);
+  --paper-card: oklch(0.92 0.04 70);
+  --scene-grad-from: oklch(0.16 0.04 270);
+  --scene-grad-to: oklch(0.22 0.06 280);
 }
 
-@media (max-width: 768px) {
-  .gameBody { flex-direction: column; }
+/* Default to day if no tod attribute set yet */
+:root:not([data-tod]) {
+  --bg-1: oklch(0.95 0.025 75);
+  --bg-2: oklch(0.92 0.04 90);
+  --paper: oklch(0.985 0.012 80);
+  --ink: oklch(0.26 0.035 60);
+  --ink-soft: oklch(0.45 0.04 60);
+  --ink-faint: oklch(0.65 0.03 60);
+  --rule: oklch(0.85 0.025 70);
+  --accent: oklch(0.58 0.13 50);
+  --warm: oklch(0.90 0.08 75);
+  --gold: oklch(0.65 0.14 70);
+  --felt: oklch(0.30 0.08 150);
+  --felt-lo: oklch(0.22 0.06 150);
+  --paper-card: oklch(0.96 0.03 80);
+  --scene-grad-from: oklch(0.95 0.04 95);
+  --scene-grad-to: oklch(0.93 0.04 80);
+}
+
+/* Rarity dot/border colors — subtle, oklch */
+.r-common    { --r: oklch(0.62 0.02 70); }
+.r-uncommon  { --r: oklch(0.62 0.12 145); }
+.r-rare      { --r: oklch(0.62 0.13 230); }
+.r-epic      { --r: oklch(0.55 0.16 320); }
+.r-legendary { --r: oklch(0.74 0.16 80); }
+
+@keyframes float-up {
+  0%   { opacity: 0; transform: translate(-50%, 0) scale(0.92); }
+  18%  { opacity: 1; transform: translate(-50%, -6px) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -52px) scale(1); }
+}
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-2px); }
+}
+@keyframes purr-wobble {
+  0%, 100% { transform: rotate(-4deg) scale(1); }
+  50%      { transform: rotate(-3deg) scale(1.014); }
+}
+
+/* App shell scaffolding */
+#app {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
